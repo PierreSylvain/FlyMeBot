@@ -11,3 +11,5 @@ datatypes-date-time>=1.0.0.a1
 aiohttp==3.6.2
 requests==2.23.0
 pytest
+opencensus
+opencensus-ext-azure
