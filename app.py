@@ -84,10 +84,10 @@ async def messages(req: Request) -> Response:
     return Response(status=HTTPStatus.OK)
 
 if __name__ == "__main__":
-    APP = web.Application(middlewares=[bot_telemetry_middleware, aiohttp_error_middleware])
-    APP.router.add_post("/api/messages", messages)
-    
+    app = web.Application(middlewares=[bot_telemetry_middleware, aiohttp_error_middleware])
+    app.router.add_post("/api/messages", messages)
+
     try:
-        web.run_app(APP, host="0.0.0.0", port=CONFIG.PORT)
+        web.run_app(app, host="0.0.0.0", port=CONFIG.PORT)
     except Exception as error:
         raise error
