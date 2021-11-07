@@ -17,10 +17,10 @@ class DefaultConfig:
     # LUIS endpoint host name, ie "westus.api.cognitive.microsoft.com"
     LUIS_API_HOST_NAME = os.environ.get("LuisAPIHostName", "westeurope.api.cognitive.microsoft.com")
     APPINSIGHTS_INSTRUMENTATION_KEY = os.environ.get(
-        "AppInsightsInstrumentationKey", "3cb89e6d-14fa-4d3b-ab8f-aec8200fd004"
+        "AppInsightsInstrumentationKey", "ec490e47-b106-4b1b-a810-8d763f5129c9"
     )
     APPINSIGHTS_INSTRUMENTATION = os.environ.get(
-        "AppInsightsInstrumentationCnx", "InstrumentationKey=3cb89e6d-14fa-4d3b-ab8f-aec8200fd004;IngestionEndpoint=https://francecentral-1.in.applicationinsights.azure.com/"
+        "AppInsightsInstrumentationCnx", "InstrumentationKey=ec490e47-b106-4b1b-a810-8d763f5129c9;IngestionEndpoint=https://switzerlandnorth-0.in.applicationinsights.azure.com/"
     )
     # https://flyme26.azurewebsites.net/api/messages
     # az ad app create --display-name "flyme26" --password "Ceciestunmot2passe" --available-to-other-tenants
