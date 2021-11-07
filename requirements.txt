@@ -7,5 +7,4 @@ botbuilder-dialogs
 opencensus
 opencensus-ext-azure
 botbuilder-ai
-Flask
-Django
+
