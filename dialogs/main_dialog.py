@@ -37,7 +37,7 @@ class MainDialog(ComponentDialog):
         self,
         luis_recognizer: FlightBookingRecognizer,
         booking_dialog: BookingDialog,
-        telemetry_client: BotTelemetryClient = None,
+        telemetry_client: BotTelemetryClient = NullTelemetryClient(),
     ):
         super(MainDialog, self).__init__(MainDialog.__name__)
         self.telemetry_client = telemetry_client or NullTelemetryClient()
@@ -163,9 +163,6 @@ class MainDialog(ComponentDialog):
         return await step_context.next(None)
 
     async def final_step(self, step_context: WaterfallStepContext) -> DialogTurnResult:
-
-
-
         # If the child dialog ("BookingDialog") was cancelled or the user failed to confirm,
         # the Result here will be null.
         if step_context.result is not None:
@@ -186,7 +183,6 @@ class MainDialog(ComponentDialog):
             await step_context.context.send_activity(message)
         else:
             self.logger.error("The dialog had been canceled or not confirmed by user")
-
             self.canceled_mmap.measure_int_put(self.canceled_measure, 1)
             self.canceled_mmap.record(self.tmap_canceled)
 
